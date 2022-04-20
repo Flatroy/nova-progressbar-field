@@ -7,12 +7,12 @@ It basically takes a field with a decimal value between 0 and 1 and shows it as 
 
 It edits like a text field.
 
-<img src="https://github.com/flatroy/nova-progressbar-field/blob/master/img/screenshot-index.jpg" alt="index example">
-<img src="https://github.com/signifly/nova-progressbar-field/blob/master/img/screenshot-detail.jpg" alt="detail example">
+<img src="https://github.com/flatroy/nova-progressbar-field/blob/main/img/screenshot-index.jpg" alt="index example">
+<img src="https://github.com/flatroy/nova-progressbar-field/blob/main/img/screenshot-detail.jpg" alt="detail example">
 
 #### DISCLAIMER:
 
-This package is still work in progress. Feel free to help improve it. 
+This package is still work in progress. Feel free to help improve it.
 
 [Original Package](https://packagist.org/packages/signifly/nova-progressbar-field)
 
