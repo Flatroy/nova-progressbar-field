@@ -1,0 +1,44 @@
+{
+    "name": "flatroy/nova-progressbar-field",
+    "description": "A Laravel Nova progress bar field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "progressbar",
+        "progress",
+        "fields"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George Daneke",
+            "email": "hi@daneke.ge",
+            "role": "Developer"
+        },
+        {
+            "name": "Ro Kleine Sonne",
+            "email": "ro@signifly.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flatroy\\FieldProgressbar\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flatroy\\FieldProgressbar\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
