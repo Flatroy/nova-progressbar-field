@@ -59,7 +59,17 @@ use Flatroy\FieldProgressbar\FieldProgressbar;
 public function fields(NovaRequest $request)
 {
     return [
-        FieldProgressbar::make('Awesomeness'),
+        Number::make(__('Score'), 'score')
+            ->min(0.01)
+            ->max(1)
+            ->step(0.01)
+            ->hideFromIndex()
+            ->hideFromDetail(),
+
+        FieldProgressbar::make(__('Score'), 'score')
+            ->hideWhenUpdating()
+            ->hideWhenCreating()
+            ->sortable(),  
     ];
 }
 
