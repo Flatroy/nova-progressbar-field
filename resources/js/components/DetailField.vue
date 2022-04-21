@@ -3,13 +3,14 @@
         class="-mx-6 flex flex-col space-y-2 px-6 py-2 md:flex-row md:space-y-0 md:py-0"
         :class="{ 'border-t border-gray-100 dark:border-gray-700': index !== 0 }"
     >
-        <div class="md:w-1/4 md:py-3">
+        <div class="md:w-1/4 md:py-3" v-if="!hideLabel">
             <slot>
                 <h4 class="font-bold md:font-normal">
                     <span>{{ label }}</span>
                 </h4>
             </slot>
         </div>
+
         <div class="break-words md:w-3/4 md:py-3">
             <slot name="value">
                 <p v-if="fieldValue && !shouldDisplayAsHtml" class="text-90" style="max-width: 400px; width: 100%">
@@ -39,6 +40,7 @@
                     toColor: '#FFEA82',
                     animateColor: false,
                 },
+                subtitle : ''
             };
         },
         mounted: function () {
@@ -73,6 +75,10 @@
             shouldDisplayAsHtml() {
                 return this.field.asHtml;
             },
+
+            hideLabel() {
+                return this.field.hideLabel;
+            }
         },
         methods: {
             drawLine() {
@@ -98,7 +104,14 @@
                     from: { color: this.options.fromColor },
                     to: { color: this.options.toColor },
                     step: (state, bar) => {
-                        bar.setText(Math.round(bar.value() * 100) + ' %');
+
+                        let labelProgress = Math.round(bar.value() * 100) + ' % ';
+
+                        if(this.field.subtitle){
+                            labelProgress += this.field.subtitle;
+                        }
+                            
+                        bar.setText(labelProgress);
                         if (this.options.animateColor) {
                             bar.path.setAttribute('stroke', state.color);
                         }

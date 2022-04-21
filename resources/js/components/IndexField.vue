@@ -46,7 +46,6 @@
                     color: this.options.color,
                     trailColor: '#E5E4F0',
                     trailWidth: 4,
-                    // color: 'url(#gradient)',
 
                     svgStyle: null,
                     text: {

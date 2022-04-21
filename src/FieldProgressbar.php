@@ -22,4 +22,24 @@ class FieldProgressbar extends Field
     {
         return $this->withMeta(['options' => $options]);
     }
+
+    /**
+     * remove label in detail field
+     *
+     * @return $this
+     */
+    public function hideLabel()
+    {
+        return $this->withMeta(['hideLabel' => true]);
+    }
+
+    /**
+     * add subtitle together to value in progress bar
+     *
+     * @return $this
+     */
+    public function subtitleInDetail(string $subtitle)
+    {
+        return $this->withMeta(['subtitle' => $subtitle]);
+    }
 }
