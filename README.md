@@ -5,7 +5,7 @@ This package allows you to add progressbar fields to your resources and dashboar
 
 It basically takes a field with a decimal value between 0 and 1 and shows it as a percentage progress bar.
 
-It edits like a text field.
+To edit a field, we recommend using the standard Number (\Laravel\Nova\Fields\Number) field.
 
 <img src="https://github.com/flatroy/nova-progressbar-field/blob/main/img/screenshot-index.jpg" alt="index example">
 <img src="https://github.com/flatroy/nova-progressbar-field/blob/main/img/screenshot-detail.jpg" alt="detail example">
@@ -48,6 +48,7 @@ After this the setup will be complete, you can use the components listed here.
 // in App\Nova\User
 ...
 use Flatroy\FieldProgressbar\FieldProgressbar;
+use Laravel\Nova\Fields\Number;
 ...
 
 /**
@@ -105,6 +106,18 @@ public function cards(NovaRequest $request)
                 'toColor' => '#40BF55',
                 'animateColor' => true,
             ]),
+    ];
+}
+```
+### Custom text and hide field label 
+
+```php
+public function cards(NovaRequest $request)
+{
+    return [
+        FieldProgressbar::make('Awesomeness')
+                ->hideLabel()
+                ->subtitleInDetail('custom subtitle'),
     ];
 }
 ```

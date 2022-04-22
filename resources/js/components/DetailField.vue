@@ -13,7 +13,7 @@
 
         <div class="break-words md:w-3/4 md:py-3">
             <slot name="value">
-                <p v-if="fieldValue && !shouldDisplayAsHtml" class="text-90" style="max-width: 400px; width: 100%">
+                <p v-if="fieldValue && !shouldDisplayAsHtml" class="text-90 pg-bar">
                     <span class="pg-bar" ref="chartContainer"></span>
                 </p>
                 <div v-else-if="fieldValue && shouldDisplayAsHtml" v-html="field.value"></div>
@@ -40,7 +40,7 @@
                     toColor: '#FFEA82',
                     animateColor: false,
                 },
-                subtitle : ''
+                subtitle: '',
             };
         },
         mounted: function () {
@@ -78,7 +78,7 @@
 
             hideLabel() {
                 return this.field.hideLabel;
-            }
+            },
         },
         methods: {
             drawLine() {
@@ -104,13 +104,12 @@
                     from: { color: this.options.fromColor },
                     to: { color: this.options.toColor },
                     step: (state, bar) => {
-
                         let labelProgress = Math.round(bar.value() * 100) + ' % ';
 
-                        if(this.field.subtitle){
+                        if (this.field.subtitle) {
                             labelProgress += this.field.subtitle;
                         }
-                            
+
                         bar.setText(labelProgress);
                         if (this.options.animateColor) {
                             bar.path.setAttribute('stroke', state.color);
