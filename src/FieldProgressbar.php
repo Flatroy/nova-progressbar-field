@@ -7,6 +7,20 @@ use Laravel\Nova\Fields\Field;
 class FieldProgressbar extends Field
 {
     /**
+     * Indicates if the element should be shown on the update view.
+     *
+     * @var (callable(\Laravel\Nova\Http\Requests\NovaRequest, mixed):bool)|bool
+     */
+    public $showOnUpdate = false;
+
+    /**
+     * Indicates if the element should be shown on the creation view.
+     *
+     * @var (callable(\Laravel\Nova\Http\Requests\NovaRequest):bool)|bool
+     */
+    public $showOnCreation = true;
+
+    /**
      * The field's component.
      *
      * @var string
