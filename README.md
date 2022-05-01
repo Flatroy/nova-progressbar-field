@@ -64,12 +64,9 @@ public function fields(NovaRequest $request)
             ->min(0.01)
             ->max(1)
             ->step(0.01)
-            ->hideFromIndex()
-            ->hideFromDetail(),
+            ->onlyOnForms(),
 
         FieldProgressbar::make(__('Score'), 'score')
-            ->hideWhenUpdating()
-            ->hideWhenCreating()
             ->sortable(),  
     ];
 }
