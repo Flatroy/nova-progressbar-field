@@ -1,9 +1,16 @@
 <template>
+  <div class="w-full" :class="padding">
     <span class="pg-bar" ref="chartContainer"></span>
+  </div>
 </template>
 
 <script>
     const ProgressBar = require('progressbar.js');
+    const widthSizes = {
+      large: '',
+      medium: 'px-6',
+      small: 'px-10'
+    }
 
     export default {
         props: ['resourceName', 'field'],
@@ -19,6 +26,7 @@
                     sub: null,
                     animateColor: false,
                 },
+                padding: ''
             };
         },
         mounted: function () {
@@ -36,6 +44,7 @@
                     this.drawLine();
                     break;
             }
+            this.padding = widthSizes[this.options.width] ?? widthSizes.full;
         },
         methods: {
             drawLine() {
