@@ -119,6 +119,20 @@ public function cards(NovaRequest $request)
 }
 ```
 
+### Custom width (small, medium or large)
+
+```php
+public function cards(NovaRequest $request)
+{
+    return [
+        FieldProgressbar::make('Awesomeness')
+            ->options([
+                'width' => 'medium',
+            ]),
+    ];
+}
+```
+
 Feel free to come with suggestions for improvements.
 
 Packages based on this package: [nova-progressbar-field](https://github.com/signifly/nova-progressbar-field) by [Signifly](https://github.com/signifly)
